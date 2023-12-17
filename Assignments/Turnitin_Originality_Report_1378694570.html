@@ -1,0 +1,353 @@
+
+	
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="X-UA-Compatible" content="IE=7" />
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="author" content="Turnitin, LLC" />
+    <meta name="keywords" content="" /> 
+    <meta name="description" content="" />
+    <meta name="viewport" content="width = initial-scale" />
+    <meta name="viewport" content="height = initial-scale" />
+    
+<title>Turnitin Originality Report</title>
+
+<base href="http://api.turnitin.com">
+<style type="text/css">
+	
+body	{
+	color: #000;
+	background: #ddd;
+	padding: 0;
+	border: 0;
+	font: 14px Arial, Verdana, sans-serif;
+	margin: 0;
+	text-align: center;
+	}
+	
+form	{
+	padding: 0;
+	margin: 0;
+	}
+	
+p	{
+	padding: .8em 1.5em;
+	margin: 0;
+	text-align: left;
+	}
+	
+img	{
+	border: 0;
+	padding: 0;
+	}
+
+div	{
+	padding: 0;
+	border: 0;
+	text-align: left;
+	}
+	
+strong	{
+	font-weight: bold;
+	}
+	
+h2	{
+	font-size: 15px;
+	margin: 20px 0 10px 20px;
+	}
+	
+a:link, a:visited	{
+	text-decoration: underline;
+	color: #00f;
+	}
+	
+a:hover, a:active	{
+	text-decoration: underline;
+	color: #888;
+	}
+	
+img#logo	{
+	float: right;
+	padding-right: 20px;
+	padding-top: 10px;
+	}
+	
+div#container	{
+	border: 1px solid #aaa;
+	width: 770px;
+	margin: 20px auto;
+	background: #fff;
+	padding: 10px 0;
+	}
+	
+div#top	{
+	background: #fff;
+	width: 7in;
+	margin: auto;
+	padding-bottom: 15px;
+	}
+	
+div#content	{
+	background: #fff;
+	}
+	
+#top p	{
+	padding: .3em 0 .3em 20px;
+	}
+
+#top span	{
+	padding-right: 35px;
+	}
+	
+#top p#orig	{
+	padding-top: 15px;
+	}
+	
+#orig span#score.red	{
+	border-right: 18px solid red;
+	padding: .2em .5em;
+	margin: 0 1em;
+	background: white;
+	border-top: 1px solid #888;
+	border-bottom: 1px solid #888;
+	border-left: 1px solid #888;
+	}
+	
+#orig span#score.orange	{
+	border-right: 18px solid orange;
+	padding: .2em .5em;
+	margin: 0 1em;
+	background: white;
+	border-top: 1px solid #888;
+	border-bottom: 1px solid #888;
+	border-left: 1px solid #888;
+	}
+	
+#orig span#score.yellow	{
+	border-right: 18px solid yellow;
+	padding: .2em .5em;
+	margin: 0 1em;
+	background: white;
+	border-top: 1px solid #888;
+	border-bottom: 1px solid #888;
+	border-left: 1px solid #888;
+	}
+	
+#orig span#score.green	{
+	border-right: 18px solid green;
+	padding: .2em .5em;
+	margin: 0 1em;
+	background: white;
+	border-top: 1px solid #888;
+	border-bottom: 1px solid #888;
+	border-left: 1px solid #888;
+	}
+	
+#orig span#score.blue	{
+	border-right: 18px solid blue;
+	padding: .2em .5em;
+	margin: 0 1em;
+	background: white;
+	border-top: 1px solid #888;
+	border-bottom: 1px solid #888;
+	border-left: 1px solid #888;
+	}
+	
+div.divider	{
+	width: 7in;
+	border: 1px dotted #888;
+	margin: auto;
+	padding: 4px 0 4px 10px;
+	font-weight: bold;
+	background: #ddd;
+	font-size: 15px;
+	}
+	
+div.links	{
+	width: 7in;
+	margin: auto;
+	}
+	
+.links div	{
+	padding: 15px 20px 15px 20px;
+	border-bottom: 1px dotted #888;
+	}
+	
+.links div#last	{
+	padding: 15px 20px 20px 20px;
+	border-bottom: 0;
+	}
+	
+div.number	{
+	float: right;
+	background: white;
+	border: 1px solid #888;
+	margin: 0 0 0 20px;
+	padding: .1em .5em;
+	text-align: center;
+	color: black;
+	font-weight: bold;
+	font-size: 15px;
+	line-height: 20px;
+	}
+	
+div.number-l	{
+	float: left;
+	background: white;
+	border: 1px solid #888;
+	margin: 6px 16px 10px 0;
+	padding: .1em .5em;
+	text-align: center;
+	color: black;
+	font-weight: bold;
+	font-size: 15px;
+	line-height: 20px;
+	}
+	
+.links div p	{
+	padding: .2em 1.5em .4em 0;
+	}
+	
+.links div p#mess	{
+	padding: .2em 1.5em 0 0;
+	}
+	
+div#body	{
+	line-height: 1.5em;
+	width: 7in;
+	margin: auto;
+	padding-bottom: 20px;
+	}
+	
+#body p	{
+	color: #555;
+	padding-top: 30px;
+	line-height: 20px;
+	}
+
+	
+#body a	{
+	display: block;
+	color: #D10A0A;
+	margin: 1em 3em;
+	background-repeat: no-repeat;
+	background-position: top right;
+	padding: 1em 1em;
+	border: 1px dotted #888;
+	font-weight: bold;
+	font-size: 15px;
+	text-decoration: none;
+	line-height: 26px;
+	background: #FFFFE5;
+	}
+
+#body span	{
+	color: #555;
+	font-weight: normal;
+	font-size: 14px;
+	}
+
+#body span.number	{
+	display: block;
+	float: right;
+	color: #000;
+	font-weight: normal;
+	border: 1px solid #888;
+	padding: 0 6px;
+	font-weight: bold;
+	margin-left: 15px;
+	font-size: .9em;
+	background: #fff;
+	}
+	
+#actions	{
+	display: none;
+	}
+
+</style>
+
+
+
+</head>
+
+<body id="or_print_report">
+
+
+<div id="container">
+
+<div id="top">
+    <div id="content">
+        <!-- ######### Top Body  ##########################--> 
+        <div id="top_body">
+            <p id="title">
+            <img src="/r/build/images/b3964fd7e38c8fcbb8bfbf2efc1f0635cb_turnitin_logo.gif" id="logo" width="60">
+            Turnitin Originality Report
+            </p>
+                <div class="general_info">
+                    <p>
+                        <span>Assignment Final Report</span>
+                        
+                        by Student User
+                        
+                    </p>
+                    <p>
+                        From Final CourseWork Turnitin Submission (50%) Part 1 (Moodle TT) (STW106CR-Designing for Usability-I-M20 (Moodle TT))
+                    </p>
+                    <ul>
+                        <li>Processed on 03-Sep-2020 09:45 IST</li>
+                        <li>ID: 1378694570</li>
+                        <li>Word Count: 2086</li>
+                    </ul>
+                </div>
+                <div class="similarity_box">
+                    <div class="overall_similarity">
+                        <div class="color_box green">&nbsp;</div>
+                        <div class="similarity_title">Similarity Index</div>
+                        <div class="similarity_percent">1%</div>
+                    </div>
+                    <div class="similarity_by_source">
+                        <div class="similarity_title">Similarity by Source</div>
+                        <dl>
+                            <dt>Internet&nbsp;Sources:</dt>
+                            <dd>1%</dd>
+                            <div class="clear"></div>
+                            <dt>Publications:</dt>
+                            <dd>0%</dd>
+                            <div class="clear"></div>
+                            <dt>Student&nbsp;Papers:</dt>
+                            <dd>0%</dd>
+                            <div class="clear"></div>
+                        </dl>
+                    </div>
+                </div>
+                <div class="clear"></div>
+                                 
+        </div>
+        <!-- ######### END Top Body  ##########################--> 
+    </div>
+</div>
+
+<div class="divider">sources:</div>
+
+<div class="links">
+
+	<div id="last">
+	<div class="number-l">1</div>
+	<p>1% match (Internet from 29-Nov-2017)</p>
+
+	<a href="https://ar.scribd.com/doc/104302899/Human-Computer-Interaction-3rd-Edition-by-ALAN-DIX-JANET-FINLAY-ISBN-0130461091-pdf">https://ar.scribd.com/doc/104302899/Human-Computer-Interaction-3rd-Edition-by-ALAN-DIX-JANET-FINLAY-ISBN-0130461091-pdf</a>
+
+	</div>
+
+</div>
+
+
+
+<div class="divider">paper text:</div>
+<div id="body">
+Introduction I have selected PUBG Mobile in this report. PUBG Mobile is an online battle royal multiplayer game. It is massively popular than the PC version because it is cost free to play and almost every smartphone can run it unlike the PC version. It was launched on March 29, 2018 by Tencent Games PUBG Corporation (Wikipedia, n.d.). It is a very good streaming game and players can earn money as well as build gaming career on it. PACT Analysis People As PACT Analysis is human centered, the people will be not only the players of the game but also other users who is related or do some works on this game. All the users of this game are categorized in the following ways as the all users do not access the game frequently. • Primary Users (Who directly uses the game) players • Secondary Users (Who receive output or provide inputs to the game) Developers who provide contents and updates on the game • Tertiary Users <a href="javascript:openDSC(2584751283, 2909, '125');" onmouseover="doRollover(1);" onmouseout="undoRollover(1);" id="125" name="1" ><span class="b-ref">1</span>(Who are directly affected by the success or failure of the system)</a> Tencent Games Corporation Physical Aspect This game is playable by all genders and age groups, but it requires some physical ability and knowledge to operate. Therefore, blind, and handicapped people cannot play this game. The people who is unfamiliar with mobile and internet will have difficulties to understand and play the game. Activities In this game, mostly the players play solo, duo and squad to fight to each other in the battle ground to be the only one standing at last to get "Winner Winner Chicken Dinner" in classic match. Players can also join Arcade, Arena and PlayLab mode for further entertaining gameplay. Players get reward when completing their achievement points. Free royal pass players can purchase elite royal pass to get more awesome rewards like gun, bag, vehicle skin and new outfits. players can complete the daily and weekly missions for eight weeks to get all the rewards in a season. Players can push their rank from bronze to conqueror in every season. Players can also stream their gameplay in the social media to be popular. Context This game is playable in mobile as well as in emulators all over the world via internet. Most of the player play indoors but they can also play outside in public place alone or with friends. The game has six servers and every server refers to a region, but players are allowed to push their rank at any server they want. Players can also participate and play in tournaments offered by PUBG Mobile corporation. Technology The game requires a smartphone and internet to play. It depends on the smartphone and internet quality how smoothly the game runs. A high-end smartphone and fast internet can give very smooth gameplay and high-quality graphical experience in the game. It is not playable from the websites. The game app should be downloaded in the smartphone. Application of Psychological and Social Issues on Human Behavior Influencing for Usability As PUBG Mobile is an online battle royal game, it requires some knowledge and experience to play it well. Like other online games, this game also could be addiction for the players because it provides good realistic experience with the players and might create health problem like weakness, eyes problem and disturbed sleeping pattern, behavior problem like violence and impropriate language, low academic performance due to disturbed study, Laziness, waste of time, lack of real world and human interaction, real life threat due to violence, increased aggression and depression, decreased focus etc. (TODAY, n.d.; Butt, Apr 8, 2019). Most of the parents don’t like this game. Therefore, the game provides a suggestion message to take break if it crosses six hours of gameplay. Conceptual Models Affordances Like the other games, it has Facebook, Twitter, Play Games and Guest login option. It has lobby with their avatar and buttons of friend list, setting (basic, graphic, control, sensitivity, audio), profile, map selection, season information, inventory, missions, emotes, message, events along with match start button. It has voice chat and video chat option with friends. Mapping The buttons in the game are kept right position with different label size, color, notation. The avatar of the player and friends are always kept at the middle of the lobby. There is no collision between the buttons. The control buttons during the battle ground are customizable by the player on their own way to learn the game fast. Constraints This game is playable only through a smartphone, PC with specific requirements along with internet connection but not on console gaming devices. It is not playable through the websites. It should be installed from Playstore. Only the control buttons are mappable, but the other buttons are static. The gyroscope setting is only usable at some smartphone but not in pc. During the battle ground, profile, royal pass, mission, inventory information is not available. Conventions Like other games, this game always navigates to the lobby after login. Players can add friends, play in solo, duo, and squad with friends. All players are dropped from the Aeroplan in each match and they are given loots, guns to survive util last zone. Players can customize their graphical and control setting. Players always get “Winner Winner Chicken Dinner” after victory. Hierarchical Task Analysis (HTA) HTA Description 0. To play PUBG Mobile 1. Open app 2. Login 2.1 Facebook 2.2 Twitter 2.3 Play games 2.4 Guest 3. Follow guideline 4. Manage inventory 4.1 Select outfit 4.2 Select gun skins 4.3 Select vehicle skins 5. Select play-type mode 6. Select Map 7. Select Solo or duo or squad 8. Invite friends 9. Start match 10. Wait for the plane to take off 11. Jump from the Aeroplan 12. Land on the battle ground 12.1 Loot guns, medicate, attachments 12.2 Kill enemies 12.3 Loot enemies 12.4 Revive teammate if knocked 12.5 Survive till last zone 13. Kill the last enemy 14. Enjoy the chicken dinner 15. Return to the lobby HTA Graphical Representation 0 PUBG Mobile 1 2 3 Open Login Follow App Guideline 4 Manage inventory 5 6 Select Select play-type Map mode 7 Select 8 Solo or Invite duo or friends squad 9 10 Start Wait for match the plane to take off 11 12 Jump Land on from the the battle Aeroplan ground 13 Kill the 14 last Enjoy the enemy chicken dinner 15 Return to the lobby 2.1 Facebook 2.2 Twitter 2.3 Play Games 2.4 Guest 4.1 Select outfit 4.2 Select gun skins 4.3 Select vehicle skins 12.1 Loot guns, medicate, attachme nts 12.2 12.3 Kill Loot enemies enemies 12.4 Revive teammate s if knocked 12.5 Survive till last zone Figure 1: Graphical representation of the task analysis for playing PUBG Mobile Plan 0: ‣ do 1-2-3-9-10-11-12-13-14-15 if new player, ‣ do 1-2-4-5-6-7-8-9-10-11-12-13-14-15 if regular player. Plan 2: ‣ do 2.1, 2.2, 2.3, 2.4 depending on your account. Plan 4: ‣ do 4.1, 4.2, 4.3 in any order Plan 12: ‣ do 12.1, 12.2, 12.3, 12.4, 12.5 in an order or not depending on the situation User Interface Design Figure 2: Login Interface Figure 3: Lobby Interface Figure 4: Login Interface Figure 5: Player Profile Figure 6: Royal Pass Interface Figure 7: Classic Mode Figure 8: Arena Mode Figure 9: Players in Aeroplan Cabin Figure 10: Livik Map Battle Ground Figure 11: Player Winning the match Usability Design Principle Visibility of system status This game produces appropriate UI sound on clicking the buttons and sometimes the button’s style, colour gets changed. It provides ping, total enemy alive and killed, zone and who is killing whom information. It provides gunfight, vehicle, aeroplane sound and friend status while playing with friends. <a href="javascript:openDSC(2584751283, 2909, '122');" onmouseover="doRollover(1);" onmouseout="undoRollover(1);" id="122" name="1" ><span class="b-ref">1</span>Match between system and the real world The</a> avatars, guns, vehicles, houses, road, trees, waters, bomb, smoke, drops are designed realistic. This game provides emotes, character with different features, voice commands and different language so that it is playable all over the world. User control and freedom Each player can customize their basic, graphic, control, sensivity, audio setting in their own way. They can play solo, duo, squad match in any map, in any server and language they want with friend or alone. They can play arena, arcade and playload mode and can exit to the lobby from a match anytime they want. Consistency and standards This game has also maintained the standard design format of an online battle royal game like inventory, profile info, settings, royal pass, missions, map list buttons and battle ground fights so that the players would not have to waste time understanding the game. Flexibility and efficiency of use Every new player is guide one time how to do the task in classic, arcade, arena and playload matches but the old players are not. There is always a guidance left behind whenever a new events or missions comes in the game so that it will be easier for the player to do things. Error prevention This game has prevented errors from being occurred with suitable design and messages like if the player tries to start a match without selecting a map then the match won’t start and produce different sound and the player can renter a match even if he mistakenly exits the game. Aesthetic and minimalist design This game has frictionless and flexible design. The game has used minimal dialogue, appropriate colour and label on the buttons, suitable images of maps, a clear map vision of the battleground, managed friend list, profile, inventory, mission information etc. Recognition rather than recall Once any new players enter the game first time, they are guided how to play the games by the system so that they will learn themselves very easily. Even the buttons and icons of the game are minimal, user friendly, visible, and understandable so that the player don’t have to remember things. <a href="javascript:openDSC(2584751283, 2909, '123');" onmouseover="doRollover(1);" onmouseout="undoRollover(1);" id="123" name="1" ><span class="b-ref">1</span>Help users recognize, diagnose, and recover from errors</a> If the players try to make errors, then the game will provide suitable error messages like “Max number reached out” if the player tries to send BP to more than ten players and “Cannot use bandages” if the player ties to bandage even if his health is more than 75 %. Usability Testing Usability testing of PUBG Mobile was done among five different people to improve its usability. Participant Profiles Tasks ‣ Open PUBG Mobile ‣ Login into their accounts ‣ Play a Classic Match Questions Asked ‣ Do you have any trouble longlining? ‣ How is the graphic quality? ‣ How is the interface and UI? ‣ How is design of the lobby? ‣ How good are the control and sensitivity setting? ‣ Are the maps good? ‣ Are the Characters good? ‣ How is the inventory? ‣ How good is the royal pass? ‣ Is it easy to navigate in the game? ‣ Is it easy to use the guns? ‣ Is it easy to drive the vehicles? ‣ Is it easy to kill enemy? ‣ Do you find enough loot? ‣ Do you get entertainment playing the game? ‣ How much would you rate the game? Report Usability Test Report 120 100 80 60 40 20 0 Effectiveness(%) Efficiency(sec) Satisfaction(%) Learnablity(%) Rabi Khawas Hemanta Thapa Afloti Khatun Prabesh Limbu Sadhana Sharma Figure 2: Usability test report of PUBG Mobile Almost every player found the game very satisfying. Mostly they were blown away by its graphic quality. Only few had a bit difficult to play the game easily. Conclusion PUBG Mobile is a more advanced and realistic online battle royal game so I will recommend this game to every new gamer to play and experience its new gaming environment and contents. This game is graphically very upgraded then the other games and very fun to play with friends so I will also recommend the famous streamer to start streaming this game. References Butt, A. R., Apr 8, 2019. Phone World. [Online] Available at: https://www.phoneworld.com.pk/7-sociological-and-psychological-effects-of-pubg/ [Accessed 22 July 2020]. TODAY, I., n.d. INDIA TODAY. [Online] Available at: https://www.indiatoday.in/education-today/featurephilia/story/pubg-ban-but-no-candy- crush-ban-gaming-addiction-health-problems-1507648-2019-04- 22#:~:text=Behavioural problems: Violent games like,up becoming less soc ially active. [Accessed 22 July 2020]. Wikipedia, n.d. Wikipedia. [Online] Available at: https://en.wikipedia.org/wiki/PlayerUnknown's_Battlegrounds [Accessed 21 July 2020]. 1 10173183 2 10173183 3 10173183 4 10173183 5 10173183 6 10173183 7 10173183 8 10173183 9 10173183 10 10173183 11 10173183 12 10173183 13 10173183 14 10173183 15 10173183 
+</div>
+</div>
+</body>
+</html>

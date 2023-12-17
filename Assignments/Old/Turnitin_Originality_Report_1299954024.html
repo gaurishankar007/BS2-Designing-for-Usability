@@ -1,0 +1,360 @@
+
+	
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="X-UA-Compatible" content="IE=7" />
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="author" content="Turnitin, LLC" />
+    <meta name="keywords" content="" /> 
+    <meta name="description" content="" />
+    <meta name="viewport" content="width = initial-scale" />
+    <meta name="viewport" content="height = initial-scale" />
+    
+<title>Turnitin Originality Report</title>
+
+<base href="http://api.turnitin.com">
+<style type="text/css">
+	
+body	{
+	color: #000;
+	background: #ddd;
+	padding: 0;
+	border: 0;
+	font: 14px Arial, Verdana, sans-serif;
+	margin: 0;
+	text-align: center;
+	}
+	
+form	{
+	padding: 0;
+	margin: 0;
+	}
+	
+p	{
+	padding: .8em 1.5em;
+	margin: 0;
+	text-align: left;
+	}
+	
+img	{
+	border: 0;
+	padding: 0;
+	}
+
+div	{
+	padding: 0;
+	border: 0;
+	text-align: left;
+	}
+	
+strong	{
+	font-weight: bold;
+	}
+	
+h2	{
+	font-size: 15px;
+	margin: 20px 0 10px 20px;
+	}
+	
+a:link, a:visited	{
+	text-decoration: underline;
+	color: #00f;
+	}
+	
+a:hover, a:active	{
+	text-decoration: underline;
+	color: #888;
+	}
+	
+img#logo	{
+	float: right;
+	padding-right: 20px;
+	padding-top: 10px;
+	}
+	
+div#container	{
+	border: 1px solid #aaa;
+	width: 770px;
+	margin: 20px auto;
+	background: #fff;
+	padding: 10px 0;
+	}
+	
+div#top	{
+	background: #fff;
+	width: 7in;
+	margin: auto;
+	padding-bottom: 15px;
+	}
+	
+div#content	{
+	background: #fff;
+	}
+	
+#top p	{
+	padding: .3em 0 .3em 20px;
+	}
+
+#top span	{
+	padding-right: 35px;
+	}
+	
+#top p#orig	{
+	padding-top: 15px;
+	}
+	
+#orig span#score.red	{
+	border-right: 18px solid red;
+	padding: .2em .5em;
+	margin: 0 1em;
+	background: white;
+	border-top: 1px solid #888;
+	border-bottom: 1px solid #888;
+	border-left: 1px solid #888;
+	}
+	
+#orig span#score.orange	{
+	border-right: 18px solid orange;
+	padding: .2em .5em;
+	margin: 0 1em;
+	background: white;
+	border-top: 1px solid #888;
+	border-bottom: 1px solid #888;
+	border-left: 1px solid #888;
+	}
+	
+#orig span#score.yellow	{
+	border-right: 18px solid yellow;
+	padding: .2em .5em;
+	margin: 0 1em;
+	background: white;
+	border-top: 1px solid #888;
+	border-bottom: 1px solid #888;
+	border-left: 1px solid #888;
+	}
+	
+#orig span#score.green	{
+	border-right: 18px solid green;
+	padding: .2em .5em;
+	margin: 0 1em;
+	background: white;
+	border-top: 1px solid #888;
+	border-bottom: 1px solid #888;
+	border-left: 1px solid #888;
+	}
+	
+#orig span#score.blue	{
+	border-right: 18px solid blue;
+	padding: .2em .5em;
+	margin: 0 1em;
+	background: white;
+	border-top: 1px solid #888;
+	border-bottom: 1px solid #888;
+	border-left: 1px solid #888;
+	}
+	
+div.divider	{
+	width: 7in;
+	border: 1px dotted #888;
+	margin: auto;
+	padding: 4px 0 4px 10px;
+	font-weight: bold;
+	background: #ddd;
+	font-size: 15px;
+	}
+	
+div.links	{
+	width: 7in;
+	margin: auto;
+	}
+	
+.links div	{
+	padding: 15px 20px 15px 20px;
+	border-bottom: 1px dotted #888;
+	}
+	
+.links div#last	{
+	padding: 15px 20px 20px 20px;
+	border-bottom: 0;
+	}
+	
+div.number	{
+	float: right;
+	background: white;
+	border: 1px solid #888;
+	margin: 0 0 0 20px;
+	padding: .1em .5em;
+	text-align: center;
+	color: black;
+	font-weight: bold;
+	font-size: 15px;
+	line-height: 20px;
+	}
+	
+div.number-l	{
+	float: left;
+	background: white;
+	border: 1px solid #888;
+	margin: 6px 16px 10px 0;
+	padding: .1em .5em;
+	text-align: center;
+	color: black;
+	font-weight: bold;
+	font-size: 15px;
+	line-height: 20px;
+	}
+	
+.links div p	{
+	padding: .2em 1.5em .4em 0;
+	}
+	
+.links div p#mess	{
+	padding: .2em 1.5em 0 0;
+	}
+	
+div#body	{
+	line-height: 1.5em;
+	width: 7in;
+	margin: auto;
+	padding-bottom: 20px;
+	}
+	
+#body p	{
+	color: #555;
+	padding-top: 30px;
+	line-height: 20px;
+	}
+
+	
+#body a	{
+	display: block;
+	color: #D10A0A;
+	margin: 1em 3em;
+	background-repeat: no-repeat;
+	background-position: top right;
+	padding: 1em 1em;
+	border: 1px dotted #888;
+	font-weight: bold;
+	font-size: 15px;
+	text-decoration: none;
+	line-height: 26px;
+	background: #FFFFE5;
+	}
+
+#body span	{
+	color: #555;
+	font-weight: normal;
+	font-size: 14px;
+	}
+
+#body span.number	{
+	display: block;
+	float: right;
+	color: #000;
+	font-weight: normal;
+	border: 1px solid #888;
+	padding: 0 6px;
+	font-weight: bold;
+	margin-left: 15px;
+	font-size: .9em;
+	background: #fff;
+	}
+	
+#actions	{
+	display: none;
+	}
+
+</style>
+
+
+
+</head>
+
+<body id="or_print_report">
+
+
+<div id="container">
+
+<div id="top">
+    <div id="content">
+        <!-- ######### Top Body  ##########################--> 
+        <div id="top_body">
+            <p id="title">
+            <img src="/r/build/images/b3964fd7e38c8fcbb8bfbf2efc1f0635cb_turnitin_logo.gif" id="logo" width="60">
+            Turnitin Originality Report
+            </p>
+                <div class="general_info">
+                    <p>
+                        <span>First Submission</span>
+                        
+                        by Student User
+                        
+                    </p>
+                    <p>
+                        From Individual PACT analysis report submission  Part 1 (Moodle TT) (STW106CR-Designing for Usability-I-M20 (Moodle TT))
+                    </p>
+                    <ul>
+                        <li>Processed on 17-Apr-2020 15:51 IST</li>
+                        <li>ID: 1299954024</li>
+                        <li>Word Count: 1056</li>
+                    </ul>
+                </div>
+                <div class="similarity_box">
+                    <div class="overall_similarity">
+                        <div class="color_box green">&nbsp;</div>
+                        <div class="similarity_title">Similarity Index</div>
+                        <div class="similarity_percent">7%</div>
+                    </div>
+                    <div class="similarity_by_source">
+                        <div class="similarity_title">Similarity by Source</div>
+                        <dl>
+                            <dt>Internet&nbsp;Sources:</dt>
+                            <dd>0%</dd>
+                            <div class="clear"></div>
+                            <dt>Publications:</dt>
+                            <dd>0%</dd>
+                            <div class="clear"></div>
+                            <dt>Student&nbsp;Papers:</dt>
+                            <dd>7%</dd>
+                            <div class="clear"></div>
+                        </dl>
+                    </div>
+                </div>
+                <div class="clear"></div>
+                                 
+        </div>
+        <!-- ######### END Top Body  ##########################--> 
+    </div>
+</div>
+
+<div class="divider">sources:</div>
+
+<div class="links">
+
+	<div>
+	<div class="number-l">1</div>
+	<p>4% match (student papers from 25-Apr-2019)</p>
+
+	<a href="/paperInfo.asp?r=86.723136045013&svr=24&session-id=125975e16854ee3d6f018a44b67b0b4a&lang=en_us&oid=oid:2:599245540&perc=4">Submitted to University of Sunderland on 2019-04-25</a>
+
+	</div>
+	<div id="last">
+	<div class="number-l">2</div>
+	<p>3% match (student papers from 22-Mar-2019)</p>
+
+	<a href="/paperInfo.asp?r=86.723136045013&svr=24&session-id=125975e16854ee3d6f018a44b67b0b4a&lang=en_us&oid=oid:2:595942554&perc=3">Submitted to Coventry University on 2019-03-22</a>
+
+	</div>
+
+</div>
+
+
+
+<div class="divider">paper text:</div>
+<div id="body">
+Pact Analysis Report Exam Result Management System Pact analysis is an important aspect which provides ideas about how the design could be made more effective, efficient and easier to use, fulfilling the requirements <a href="javascript:openDSC(599245540, 2, '18');" onmouseover="doRollover(1);" onmouseout="undoRollover(1);" id="18" name="1" ><span class="b-ref">1</span>before rushing to a particular design<span> problem. </span>It helps to<span> understand </span>the</a> situation, provides improvements and near future’s vision. It is human centered and focuses on four parts which are People: Users who directly interact with the products. Activities: How should be the activity carried out? How should be improved? Contexts: Environment of the activities. Technologies: Tools currently being used and what might be used in the near future. 1. <a href="javascript:openDSC(599245540, 2, '21');" onmouseover="doRollover(1);" onmouseout="undoRollover(1);" id="21" name="1" ><span class="b-ref">1</span>People Analysis The people<span> will </span>be the<span> users </span>of the</a> result management system and the users can be categorized in three parts ? Primary Users (Who directly uses the system) Students Academic Staffs – Lecturers Administration – Course Coordinators ? Secondary Users (Who receive output or provide inputs to the system) Board of examination ? Tertiary Users (Who are directly affected by the success or failure of the system) Government There lots of variations in the users which are explained by the following sections. 1.1 Physical Aspects The difference in physics affects briefly <a href="javascript:openDSC(595942554, 2, '6');" onmouseover="doRollover(2);" onmouseout="undoRollover(2);" id="6" name="2" ><span class="b-ref">2</span>on making design decisions<span> for </span>accessibility and usability<span> of </span>the system.</a> ? Gender: <a href="javascript:openDSC(595942554, 2, '9');" onmouseover="doRollover(2);" onmouseout="undoRollover(2);" id="9" name="2" ><span class="b-ref">2</span>Male and female<span> both </span>are included among<span> the </span>users.<span> ? Age: the users </span>would be</a> between 16 to 60 years old. ? Height: Average height for both male and female. ? Physical Ability: Most of the students will be physically well but some of them could be physically deformed like blind and others disabilities. 1.2 Psychological Aspect The users would be well educated, have skills, capable of doing jobs, could understand thing without having trouble and could adapt to changes. 1.3 Social difference The users could be different from nationality and could prefer different language. The probability of having user from different nationality will be less. English could be common language to communicate to each other and other local language also could be used but all of them might be from same IT background. <a href="javascript:openDSC(595942554, 2, '13');" onmouseover="doRollover(2);" onmouseout="undoRollover(2);" id="13" name="2" ><span class="b-ref">2</span>2. Activity Analysis The<span> main </span>purpose of<span> the system </span>is to<span> publish </span>the<span> results of </span>the</a> student’s exam and use it in the near future for further analysis. All the process should be convenient and comfortable to all the users. The activities and tasks are described in the following sections. 2.1 Entering Result After checking the student’s papers, the course’s lecturer of the particular subjects uploads the student’s masks. A course can be lectured by many lecturers sometimes, so lecturers of the same subject may vary and the papers also could be checked by different lecturers. There also could be previous semester student who failed their exam before and giving it again. Each course would have about 4-8 subjects in a semester and some students should take only 3-4 according to the year but some students would be in all the mandatory subjects in a particular batch. But it would be different when there are subject selections. Optional subject selection mostly starts from 2nd year of the batch. While entering the student’s masks, first task would be preparing of the name list of students which would occur in the beginning of the semester. But the name lists can be changed after the semester started when selection process finalized, if there are optional subjects in the semester. 2.2 Exam Officer Confirmation The masks of the students are then analyzed by the exam officer and if there is any wrong data or any mistake in the student’s result, then the mask will be denied before publishing the results. If there is no problem, then the masks are queued along with the student’s name of the particular subjects of a batch and then they are authorized. 2.3 HOD Confirmation The masks of the students are again analyzed by HOD and if there is any wrong data or any mistake in the student’s result, then the mask will be denied before publishing the results. If there is no problem, then the masks are queued along with the student’s name of the particular subjects of a batch. Then sheets are generated and the result is published. 2.4 Backup The exam results should be backed up course wisely, batch wisely, semester wisely and subject wisely until a specified time for the future works like for making document, re- entering mask of the failed students after giving the exam again. 2.5 Result Monitoring The data of the results might be analyzed to make decisions about the improvements of the student’s performance, course and its subjects, after a particular semester or a batch. 3. Context Analysis All the activities while publishing the results happens under a context. There are three types of useful context that can be used to describe the phenomenon which are given below 3.1 Physical context All the activities would be taken place indoors. Students could see their result from anywhere. The presence of the lecturers and also the students is necessary but it should not affect the other students and the lecturers or the administration. 3.2 Social Context The result should be published as soon as possible so that the student does not need to wait long time to see their performance. Student doesn <a href="javascript:openDSC(599245540, 2, '33');" onmouseover="doRollover(1);" onmouseout="undoRollover(1);" id="33" name="1" ><span class="b-ref">1</span>’t need to ensure their privacy on<span> result </span>data</a> and the lecturers should only be able to access student mas on subjects they are in-charged. 3.3 Psychological Context Students and lecturers could directly communicate with the administration regarding result if there is any problem like failing the exam. The <a href="javascript:openDSC(599245540, 2, '35');" onmouseover="doRollover(1);" onmouseout="undoRollover(1);" id="35" name="1" ><span class="b-ref">1</span>activities should not disturb<span> other organizational </span>working environment.</a> 4. Technology Analysis The main purpose <a href="javascript:openDSC(599245540, 2, '37');" onmouseover="doRollover(1);" onmouseout="undoRollover(1);" id="37" name="1" ><span class="b-ref">1</span>of the technology is to prevent<span> from </span>the misuse, resource and effort wastage,<span> unauthorized access </span>and</a> sabotage. Technology provides the users the easy, convenient, effective and safe ways to make the task done without having any misuse of the data. Therefore, following technologies are recommended to use ? Websites: Students can easily see their result by logging in the student website from anywhere. ? Mobile APP: Students can easily see their result from their mobile if the result publishing is app is made for the students. ? Card Reader: Students can easily see their result with the help of their card. ? Message: Students would have no trouble if the organization publish each student’s exam result to each student’s mobile number via message. If the cost is affordable, mobile app would be an ideal solution. 1 10173183 2 10173183 3 10173183 4 10173183 
+</div>
+</div>
+</body>
+</html>
